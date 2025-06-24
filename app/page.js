@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </nav>
       <main className="flex flex-1 flex-col items-center justify-center text-center px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-700 text-transparent bg-clip-text">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-700 text-transparent bg-clip-text py-5">
           Your Secure Cloud File Sharing Platform
         </h1>
         <p className="text-muted-foreground text-lg md:text-2xl max-w-2xl mb-10">

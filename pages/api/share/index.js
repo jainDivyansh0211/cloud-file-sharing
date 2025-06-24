@@ -20,6 +20,6 @@ export default async function handler(req, res) {
     await file.save();
   }
 
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/share/${file.shareToken}`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL || "https://cloud-file-sharing.vercel.app"}/share/${file.shareToken}`;
   res.json({ url });
 }
