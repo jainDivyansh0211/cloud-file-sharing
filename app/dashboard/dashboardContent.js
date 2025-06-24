@@ -293,7 +293,7 @@ export default function DashboardContent() {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuSeparator/>
+              <DropdownMenuSeparator/>  
               <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuItem onClick={() => signOut()}>
                   <LogOut className="mr-2 h-4 w-4" />
