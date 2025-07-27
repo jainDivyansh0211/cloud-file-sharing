@@ -1,118 +1,51 @@
-# ♟️ ChessMate: Terminal-Based 2-Player Chess Engine
+# ByteSend
 
-[![C++](https://img.shields.io/badge/language-C%2B%2B17-blue.svg)](https://isocpp.org/)
-[![Platform](https://img.shields.io/badge/platform-Terminal-lightgrey.svg)]()
-[![Game Mode](https://img.shields.io/badge/mode-2_Player-green.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
-[![Repo](https://img.shields.io/badge/github-view_repo-black?logo=github)](https://github.com/jainDivyansh0211/chess-2Player-cpp)
+[![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Next.js](https://img.shields.io/badge/framework-Next.js-black?logo=next.js)](https://nextjs.org/)
+[![MongoDB](https://img.shields.io/badge/database-MongoDB-green?logo=mongodb)](https://www.mongodb.com/)
+[![Hosted on Vercel](https://img.shields.io/badge/hosted_on-Vercel-black?logo=vercel)](https://cloud-file-sharing.vercel.app/)
+[![GitHub](https://img.shields.io/badge/source-GitHub-blue?logo=github)](https://github.com/jainDivyansh0211/cloud-file-sharing)
 
-ChessMate is a C++17 terminal-based chess game for two human players, complete with piece movement, game rules, castling, promotion, check/checkmate/stalemate detection, and even a PGN-style move log — all rendered beautifully in ASCII.
+A secure and elegant cloud file-sharing platform that enables users to upload, manage, and share files privately and efficiently.
 
----
-
-## 🎯 Features
-
-- ♞ **Complete Chess Rules** – Pawns, Castling, En Passant (soon), Promotion, Checkmate/Stalemate detection.
-- 🧠 **Move Validation Engine** – Prevents illegal moves, captures, or moving into check.
-- 🎨 **ASCII Art Board Renderer** – Colored terminal UI with piece symbols.
-- 📝 **PGN-Like Move Logger** – Keeps track of moves like `1. e4 e5 2. Nf3 Nc6 ...`.
-- ⏱️ **Custom Timers + Increments** – Per-player configurable clock with support for Fischer-style increments.
-- 🏁 **Game End Detection** – Supports checkmate, stalemate, and timeout losses.
+Powered by **Next.js**, **Google OAuth**, **AWS S3**, and **MongoDB**, ByteSend provides a modern, smooth user experience with robust backend integrations and fast cloud storage.
 
 ---
 
-## 📷 Preview
+## 🎯 What This Does
 
-> Example Terminal Output:
-
-```
-   a  b  c  d  e  f  g  h  
-
-8 |♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜| 8
-7 |♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟| 7
-6 |  ▓   ▓   ▓   ▓| 6
-5 |▓   ▓   ▓   ▓  | 5
-4 |  ▓   ▓   ▓   ▓| 4
-3 |▓   ▓   ▓   ▓  | 3
-2 |♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙| 2
-1 |♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖| 1
-
-   a  b  c  d  e  f  g  h  
-```
+- **Login with Google**: Fast, secure authentication via NextAuth.js and OAuth.
+- **Upload Files Securely**: Upload directly to AWS S3 with signed URLs.
+- **JWT Protected API**: Secure your API routes and actions with token validation.
+- **Auto Redirect to Dashboard**: Authenticated users are sent directly to their workspace.
+- **MongoDB for Persistence**: Store session info, user metadata and file logs easily.
+- **Beautiful UI**: Minimalistic and clean UI powered by Tailwind CSS and Geist fonts.
 
 ---
 
-## 🚀 Getting Started
+## 🏃‍♂️ Get Started in 30 Seconds
 
-### 🧰 Requirements
+### ✅ What You Need
 
-- A C++17 compatible compiler (`g++` or `clang++`)
-- Terminal (Linux/macOS or WSL on Windows)
+- [Node.js](https://nodejs.org/) (v18+)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or local MongoDB
+- AWS credentials (IAM user with S3 access)
+- [Vercel CLI](https://vercel.com/cli) or local dev setup
 
-### 🛠️ Build & Run
+### ▶️ Fire It Up
 
 ```bash
-# Clone the repo
-git clone https://github.com/jainDivyansh0211/chess-2Player-cpp
-cd chess-2Player-cpp
+# Clone the repository
+git clone https://github.com/jainDivyansh0211/cloud-file-sharing.git
+cd cloud-file-sharing
 
-# Compile
-g++ -std=c++17 main.cpp board.cpp piece.cpp player.cpp -o chess
+# Install dependencies
+npm install
 
-# Run
-./chess
-```
+# Create a .env.local file and configure:
+# NEXTAUTH_SECRET, NEXTAUTH_URL
+# AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION
+# MONGODB_URI, JWT_SECRET
 
----
-
-## 🕹️ How to Play
-
-1. On launching, enter time (in seconds) and increment for both players.
-2. Move using standard **algebraic notation**:
-   - `e4`, `Nf3`, `exd5`, `O-O`, `O-O-O`, `e8Q` (promotion)
-3. The game automatically alternates turns, tracks time, and prints status.
-4. At the end, PGN-style move history is shown.
-
----
-
-## 🧠 Code Structure
-
-| File           | Description                                |
-|----------------|--------------------------------------------|
-| `main.cpp`     | Main game loop with timers and PGN         |
-| `board.hpp/.cpp` | Board logic, movement rules, evaluation |
-| `piece.hpp/.cpp` | Piece definition & symbols               |
-| `player.hpp/.cpp` | Player input parsing, castling, promotion |
-| `chess.exe`    | Compiled binary for direct execution       |
-
----
-
-## 🧪 Sample Move Flow
-
-```text
-Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): e4
-Check!
-Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): e5
-Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): Nf3
-...
-```
-
-PGN Output:
-```
-1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 ...
-```
-
----
-
-## 👨‍💻 Author
-
-**Divyansh Jain**  
-🎓 B.Tech, IIT Kharagpur '27  
-📧 [div0211jain@gmail.com](mailto:div0211jain@gmail.com)  
-🔗 [GitHub Profile](https://github.com/jainDivyansh0211)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+# Run development server
+npm run dev
