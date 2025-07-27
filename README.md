@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ♟️ ChessMate: Terminal-Based 2-Player Chess Engine
 
-## Getting Started
+[![C++](https://img.shields.io/badge/language-C%2B%2B17-blue.svg)](https://isocpp.org/)
+[![Platform](https://img.shields.io/badge/platform-Terminal-lightgrey.svg)]()
+[![Game Mode](https://img.shields.io/badge/mode-2_Player-green.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+[![Repo](https://img.shields.io/badge/github-view_repo-black?logo=github)](https://github.com/jainDivyansh0211/chess-2Player-cpp)
 
-First, run the development server:
+ChessMate is a C++17 terminal-based chess game for two human players, complete with piece movement, game rules, castling, promotion, check/checkmate/stalemate detection, and even a PGN-style move log — all rendered beautifully in ASCII.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🎯 Features
+
+- ♞ **Complete Chess Rules** – Pawns, Castling, En Passant (soon), Promotion, Checkmate/Stalemate detection.
+- 🧠 **Move Validation Engine** – Prevents illegal moves, captures, or moving into check.
+- 🎨 **ASCII Art Board Renderer** – Colored terminal UI with piece symbols.
+- 📝 **PGN-Like Move Logger** – Keeps track of moves like `1. e4 e5 2. Nf3 Nc6 ...`.
+- ⏱️ **Custom Timers + Increments** – Per-player configurable clock with support for Fischer-style increments.
+- 🏁 **Game End Detection** – Supports checkmate, stalemate, and timeout losses.
+
+---
+
+## 📷 Preview
+
+> Example Terminal Output:
+
+```
+   a  b  c  d  e  f  g  h  
+
+8 |♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜| 8
+7 |♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟| 7
+6 |  ▓   ▓   ▓   ▓| 6
+5 |▓   ▓   ▓   ▓  | 5
+4 |  ▓   ▓   ▓   ▓| 4
+3 |▓   ▓   ▓   ▓  | 3
+2 |♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙| 2
+1 |♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖| 1
+
+   a  b  c  d  e  f  g  h  
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🧰 Requirements
 
-## Learn More
+- A C++17 compatible compiler (`g++` or `clang++`)
+- Terminal (Linux/macOS or WSL on Windows)
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠️ Build & Run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clone the repo
+git clone https://github.com/jainDivyansh0211/chess-2Player-cpp
+cd chess-2Player-cpp
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Compile
+g++ -std=c++17 main.cpp board.cpp piece.cpp player.cpp -o chess
 
-## Deploy on Vercel
+# Run
+./chess
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🕹️ How to Play
+
+1. On launching, enter time (in seconds) and increment for both players.
+2. Move using standard **algebraic notation**:
+   - `e4`, `Nf3`, `exd5`, `O-O`, `O-O-O`, `e8Q` (promotion)
+3. The game automatically alternates turns, tracks time, and prints status.
+4. At the end, PGN-style move history is shown.
+
+---
+
+## 🧠 Code Structure
+
+| File           | Description                                |
+|----------------|--------------------------------------------|
+| `main.cpp`     | Main game loop with timers and PGN         |
+| `board.hpp/.cpp` | Board logic, movement rules, evaluation |
+| `piece.hpp/.cpp` | Piece definition & symbols               |
+| `player.hpp/.cpp` | Player input parsing, castling, promotion |
+| `chess.exe`    | Compiled binary for direct execution       |
+
+---
+
+## 🧪 Sample Move Flow
+
+```text
+Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): e4
+Check!
+Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): e5
+Enter move (e.g. e4, Nf3, exd5, O-O, e8Q): Nf3
+...
+```
+
+PGN Output:
+```
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 ...
+```
+
+---
+
+## 👨‍💻 Author
+
+**Divyansh Jain**  
+🎓 B.Tech, IIT Kharagpur '27  
+📧 [div0211jain@gmail.com](mailto:div0211jain@gmail.com)  
+🔗 [GitHub Profile](https://github.com/jainDivyansh0211)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
