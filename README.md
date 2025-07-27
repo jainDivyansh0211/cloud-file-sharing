@@ -15,8 +15,6 @@ Built using **Next.js App Router**, **NextAuth**, **AWS S3**, and **MongoDB**, *
 
 ## 📸 UI Snapshots
 
-> *(Add these screenshots to your repo under `public/assets/screenshots/` for preview)*
-
 ### 🏠 Landing Page  
 ![Landing Page](public/assets/screenshots/landing.png)
 
